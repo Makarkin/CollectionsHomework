@@ -11,29 +11,9 @@ public class ClientOrder {
         table.setBusy(true);
         System.out.println("Select dishes. After your choice, enter 'esc'.");
         HashSet<String> dishNamesSet = table.getMenu();
-        seeMenu(dishNamesSet);
+        AuxilaryService.seeMenu(dishNamesSet);
         int size = dishNamesSet.size();
-        selectDishes(size, table);
-    }
-
-    private void seeMenu(HashSet<String> dishNamesSet) {
-        for (String dishName : dishNamesSet) {
-            System.out.println(dishName);
-        }
-    }
-
-    private void selectDishes(int size, RestaurantTable table) {
-        String dishName;
-        Scanner scanner = new Scanner(System.in);
-        HashSet<String> dishNamesSet;
-        for (int i = 0; i < size; i++) {
-            dishName = scanner.nextLine();
-            if ("esc".equals(dishName)) {
-               break;
-            }
-
-            table.getOrder().add(dishName);
-        }
+        AuxilaryService.selectDishes(size, table);
     }
 
     /**

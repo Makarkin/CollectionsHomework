@@ -5,7 +5,7 @@ import restaurantObjects.RestaurantTable;
 import java.util.*;
 
 public class GeneralOrder {
-    ArrayDeque<String> generalOrder = new ArrayDeque<>();
+    ArrayDeque<String> orderDeque = new ArrayDeque<>();
 
     /**
      *this method gradually collects orders from all tables,
@@ -17,7 +17,7 @@ public class GeneralOrder {
     public void createGeneralOrder(ArrayList<RestaurantTable> tablesList) {
         for (RestaurantTable table : tablesList) {
             for (String dish : table.getOrder()) {
-                generalOrder.add(dish);
+                orderDeque .add(dish);
             }
         }
     }
@@ -25,7 +25,5 @@ public class GeneralOrder {
     /**
      *This method outputs to the console elements of "generalOrder" field.
      */
-    public void seeGeneralOrder() {
-        System.out.printf("General order: %s%n", Arrays.toString(generalOrder.toArray()));
-    }
+
 }
