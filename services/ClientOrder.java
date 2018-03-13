@@ -1,4 +1,4 @@
-package Services;
+package services;
 
 import restaurantObjects.RestaurantTable;
 import restaurantObjects.Restaurant;
